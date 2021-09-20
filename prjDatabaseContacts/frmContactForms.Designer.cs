@@ -41,8 +41,8 @@ namespace prjDatabaseContacts
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.lvOutput = new System.Windows.Forms.ListView();
             this.lvSelected = new System.Windows.Forms.ListView();
+            this.lvOutput = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -148,15 +148,6 @@ namespace prjDatabaseContacts
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // lvOutput
-            // 
-            this.lvOutput.HideSelection = false;
-            this.lvOutput.Location = new System.Drawing.Point(283, 32);
-            this.lvOutput.Name = "lvOutput";
-            this.lvOutput.Size = new System.Drawing.Size(164, 246);
-            this.lvOutput.TabIndex = 12;
-            this.lvOutput.UseCompatibleStateImageBehavior = false;
-            // 
             // lvSelected
             // 
             this.lvSelected.HideSelection = false;
@@ -166,13 +157,22 @@ namespace prjDatabaseContacts
             this.lvSelected.TabIndex = 13;
             this.lvSelected.UseCompatibleStateImageBehavior = false;
             // 
+            // lvOutput
+            // 
+            this.lvOutput.FormattingEnabled = true;
+            this.lvOutput.ItemHeight = 15;
+            this.lvOutput.Location = new System.Drawing.Point(281, 32);
+            this.lvOutput.Name = "lvOutput";
+            this.lvOutput.Size = new System.Drawing.Size(158, 244);
+            this.lvOutput.TabIndex = 14;
+            // 
             // frmContactForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 293);
-            this.Controls.Add(this.lvSelected);
             this.Controls.Add(this.lvOutput);
+            this.Controls.Add(this.lvSelected);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEdit);
@@ -207,7 +207,7 @@ namespace prjDatabaseContacts
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.ListView lvOutput;
         private System.Windows.Forms.ListView lvSelected;
+        private System.Windows.Forms.ListBox lvOutput;
     }
 }
