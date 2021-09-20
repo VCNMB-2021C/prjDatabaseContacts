@@ -45,7 +45,6 @@ namespace prjDatabaseContacts
                     }
                     reader.Close();
                     command.Dispose();
-                    connection.Close();
                 }
             }
             catch (SqlException ex)

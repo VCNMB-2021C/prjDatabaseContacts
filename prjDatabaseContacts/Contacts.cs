@@ -20,12 +20,14 @@ namespace prjDatabaseContacts
         public string Phonenumber { get => phonenumber; set => phonenumber = value; }
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
         public string Username { get => username; set => username = value; }
+        
         public Contacts()
         {
 
         }
-        public Contacts(string firstName, string surname, string phonenumber, string emailAddress, string username)
+        public Contacts(int id,string firstName, string surname, string phonenumber, string emailAddress, string username)
         {
+            this.ID = id;
             FirstName = firstName;
             Surname = surname;
             Phonenumber = phonenumber;

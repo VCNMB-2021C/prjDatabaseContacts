@@ -117,6 +117,7 @@ namespace prjDatabaseContacts
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add New Contact";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
