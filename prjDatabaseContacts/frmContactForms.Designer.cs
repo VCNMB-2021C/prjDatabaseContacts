@@ -41,8 +41,11 @@ namespace prjDatabaseContacts
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.lvSelected = new System.Windows.Forms.ListView();
             this.lvOutput = new System.Windows.Forms.ListBox();
+            this.richOutput = new System.Windows.Forms.RichTextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -128,6 +131,7 @@ namespace prjDatabaseContacts
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit selected Contact";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -138,6 +142,7 @@ namespace prjDatabaseContacts
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReset
             // 
@@ -147,15 +152,7 @@ namespace prjDatabaseContacts
             this.btnReset.TabIndex = 11;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // lvSelected
-            // 
-            this.lvSelected.HideSelection = false;
-            this.lvSelected.Location = new System.Drawing.Point(471, 32);
-            this.lvSelected.Name = "lvSelected";
-            this.lvSelected.Size = new System.Drawing.Size(213, 246);
-            this.lvSelected.TabIndex = 13;
-            this.lvSelected.UseCompatibleStateImageBehavior = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lvOutput
             // 
@@ -165,14 +162,56 @@ namespace prjDatabaseContacts
             this.lvOutput.Name = "lvOutput";
             this.lvOutput.Size = new System.Drawing.Size(158, 244);
             this.lvOutput.TabIndex = 14;
+            this.lvOutput.SelectedIndexChanged += new System.EventHandler(this.lvOutput_SelectedIndexChanged);
+            // 
+            // richOutput
+            // 
+            this.richOutput.Location = new System.Drawing.Point(471, 32);
+            this.richOutput.Name = "richOutput";
+            this.richOutput.Size = new System.Drawing.Size(199, 244);
+            this.richOutput.TabIndex = 15;
+            this.richOutput.Text = "";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(8, 168);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(119, 23);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "Delete Contact";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(8, 226);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(119, 23);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(8, 255);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(119, 23);
+            this.btnClose.TabIndex = 18;
+            this.btnClose.Text = "Close all";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmContactForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 293);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.richOutput);
             this.Controls.Add(this.lvOutput);
-            this.Controls.Add(this.lvSelected);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEdit);
@@ -207,7 +246,10 @@ namespace prjDatabaseContacts
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.ListView lvSelected;
         private System.Windows.Forms.ListBox lvOutput;
+        private System.Windows.Forms.RichTextBox richOutput;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnClose;
     }
 }

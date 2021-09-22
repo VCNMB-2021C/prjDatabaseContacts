@@ -53,5 +53,42 @@ namespace prjDatabaseContacts
             }
             Console.ReadLine();
         }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Length <= 0 || txtPassword.Text.Length <= 0 )
+            {
+                MessageBox.Show("Please enter all the fields, make sure none are empty");
+            }
+            else
+            {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(Connection.conn))
+                    {
+                        SqlCommand command = new
+                            SqlCommand("INSERT INTO tblUsers " +
+                                       "VALUES(@Name, @Surname) ;", connection);
+                        command.Parameters.AddWithValue("@Name", txtUsername.Text);
+                        command.Parameters.AddWithValue("@Surname", txtPassword.Text);
+                        connection.Open();
+
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        adapter.InsertCommand = command;
+
+                        int id = Convert.ToInt32(adapter.InsertCommand.ExecuteScalar());
+                        MessageBox.Show("User has been added to the database " + id);
+                        adapter.Dispose();
+
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error Connecting to the Database", "Connection Error");
+                }
+                txtPassword.Text = "";
+                txtUsername.Text = "";
+            }
+        }
     }
 }
